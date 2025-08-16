@@ -200,3 +200,122 @@ footer p {
 }
 
 
+/* selectores de clase . */
+
+/* universal * */
+
+/* id # */
+
+/* Etiqueta name form */
+
+/* selector por atributo */
+
+/* seclector por elementos y sub elemntos */
+
+.registro {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra todo horizontal */
+  margin: 0;
+  margin-top: 20px;
+}
+
+
+#clienteForm {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 15px;
+  width: 60%;
+  margin-bottom: auto;
+  padding: 20px;
+  /* Debe ser quitado el border para la entrega final */
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  background: #ffffff;
+}
+
+.nombre {
+  grid-column: span 2;
+}
+
+.correo {
+  grid-column: span 2;
+}
+
+.tipo {
+  grid-column: span 2;
+}
+.address {
+  grid-column: span 2;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+}
+input, textarea, select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+textarea {
+  resize: vertical;
+}
+
+/* Campos que ocupan todo el ancho */
+.full {
+  grid-column: span 2;
+}
+
+button {
+  grid-column: span 2;
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+}
+button:hover {
+  background-color: #45a049;
+}
+
+table {
+    width: 60%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+thead {
+  background-color: #2d2f2d;
+  color: #fff;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+  
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.buttonForm {
+  background-color: red;
+  width: 20%;
+}
+
+.eliminar {
+  background-color: red;
+  width: 40%;
+  margin-left: 20px;
+}
+
+.editar {
+  width: auto;
+  width: 40%;
+}

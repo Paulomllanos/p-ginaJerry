@@ -32,36 +32,44 @@
   </nav>
   <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
   <!-- Formulario -->
-   <section class="class">
+   <section class="registro">
        <!-- caja de formulario -->
         <form id="clienteForm">
             <!-- formulario inputs y labels -->
+            
+            <div class="nombre">
+                <label for="nombreCompleto">Nombre Completo:</label>
+                <input type="text" id="nombreCompleto" name="nombreCompleto" required>
+            </div>
+            
             <div>
-               <label for="nombreCompleto">Nombre Completo:</label>
-               <input type="text" id="nombreCompleto" name="nombreCompleto" required>
-
-               <label for="id">Identificación:</label>
-               <input type="text" id="id" name="id" required>
- 
-               <label for="telefono">Teléfono: </label>
-               <input type="text" id="telefono" name="telefono" required>
- 
-               <label for="correo">Correo Eléctronico:</label>
-               <input type="text" id="correo" name="correo" required>
- 
-               <label for="direccion">Dirección:</label>
-               <textarea id="direccion" name="direccion" rows="4" required></textarea>
-
+                <label for="id">Identificación:</label>
+                <input type="text" id="id" name="id" required>
+            </div>
+            <div>
+                <label for="telefono">Teléfono: </label>
+                <input type="text" id="telefono" name="telefono" required>
+            </div>
+            <div class="correo">
+                <label for="correo">Correo Eléctronico:</label>
+                <input type="text" id="correo" name="correo" required>
+            </div>
+            <div class="address">
+                <label for="direccion">Dirección:</label>
+                <textarea id="direccion" name="direccion" rows="4" required></textarea>
+            </div>
+            <div class="tipo">
+                <label for="tipoCliente">Tipo de Cliente:</label>
                 <select name="tipoCliente" id="tipoCliente">
                     <option value="" selected disabled>Seleccione tipo de cliente</option>
                     <option value="regular">regular</option>
                     <option value="frecuente">frecuente</option>
                     <option value="mayorista">mayorista</option>
-                </select>
- 
+                </select>    
             </div>
+           
             <!-- boton del formulario -->
-                <button type="submit">Registrar Cliente</button>
+                <button class="buttonForm" type="submit">Registrar Cliente</button>
             <div>
 
             </div>
@@ -86,12 +94,18 @@
                     <td>dat2</td>
                     <td>dat3</td>
                     <td>dat4</td>
-                    <td>dat5</td>
+                    <td>
+                        <button class="editar">Editar</button>
+                        <button class="eliminar">Eliminar</button>
+                    </td>
                 </tr>
+                
             </tbody>
             
         </table>
         
    </section>
+
+   <script src="/tblLogic.js"></script>
 </body>
 </html>
