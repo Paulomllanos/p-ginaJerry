@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css">
+    <title>Clientes</title>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+   <div class="logo">
+    <div class="logo-img">
+      <img src="./image/martillo.jpg" alt=""
+      width="35px" height="30px">
+    </div>
+    <div class="logo-text">
+      Ferreteria <br>El Martillo
+    </div>
+   </div>
+   <div class="header-title">
+    Sistema de Gestión Integral
+   </div>
+  </header>  
+  <!-- Barra de Navegación -->
+  <nav>
+    <ul class="nav-buttons">
+     <li> <a href="clientes.html" class="nav-btn">Clientes</a> </li>
+     <li> <a href="productos.html" class="nav-btn">Productos</a> </li>
+     <li> <a href="facturacion.html" class="nav-btn">Facturación</a> </li>
+    </ul>
+  </nav>
+  <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+  <!-- Formulario -->
+   <section class="class">
+       <!-- caja de formulario -->
+        <form id="clienteForm">
+            <!-- formulario inputs y labels -->
+            <div>
+               <label for="nombreCompleto">Nombre Completo:</label>
+               <input type="text" id="nombreCompleto" name="nombreCompleto" required>
+
+               <label for="id">Identificación:</label>
+               <input type="text" id="id" name="id" required>
+ 
+               <label for="telefono">Teléfono: </label>
+               <input type="text" id="telefono" name="telefono" required>
+ 
+               <label for="correo">Correo Eléctronico:</label>
+               <input type="text" id="correo" name="correo" required>
+ 
+               <label for="direccion">Dirección:</label>
+               <textarea id="direccion" name="direccion" rows="4" required></textarea>
+
+                <select name="tipoCliente" id="tipoCliente">
+                    <option value="" selected disabled>Seleccione tipo de cliente</option>
+                    <option value="regular">regular</option>
+                    <option value="frecuente">frecuente</option>
+                    <option value="mayorista">mayorista</option>
+                </select>
+ 
+            </div>
+            <!-- boton del formulario -->
+                <button type="submit">Registrar Cliente</button>
+            <div>
+
+            </div>
+        </form>
+
+        <!-- Tabla de rgeistros -->
+
+        <table class="class" id="tblClientes">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>ID</th>
+                    <th>Teléfono</th>
+                    <th>Tipo</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>dat1</td>
+                    <td>dat2</td>
+                    <td>dat3</td>
+                    <td>dat4</td>
+                    <td>dat5</td>
+                </tr>
+            </tbody>
+            
+        </table>
+        
+   </section>
+</body>
+</html>
