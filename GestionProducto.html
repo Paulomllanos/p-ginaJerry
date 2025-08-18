@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GestionProducto</title>
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+   <div class="logo">
+    <div class="logo-img">
+      <img src="./image/martillo.jpg" alt=""
+      width="35px" height="30px">
+    </div>
+    <div class="logo-text">
+      Ferreteria <br>El Martillo
+    </div>
+   </div>
+   <div class="header-title">
+    Sistema de Gestión Integral
+   </div>
+  </header>
+
+  <!-- Barra de Navegación -->
+  <nav>
+    <ul class="nav-buttons">
+     <li> <a href="clientes.html" class="nav-btn">Clientes</a> </li>
+     <li> <a href="productos.html" class="nav-btn">Productos</a> </li>
+     <li> <a href="facturacion.html" class="nav-btn">Facturación</a> </li>
+    </ul>
+  </nav>
+
+  <main>
+    <!-- Sección Principal -->
+    <section>
+      <h2>Gestion de Productos</h2>
+      <form id="productoForm">
+        <label for="codigo">Código:</label>
+        <input type="text" id="codigo" name="codigo" required>
+        <br><br>
+
+        <label for="nombreProducto">Nombre:</label>
+        <input type="text" id="nombreProducto" name="nombreProducto" required>
+        <br><br>
+
+        <label for="descripcion">Descripción:</label>
+        <textarea id="descripcion" name="descripcion" rows="3" required></textarea>
+        <br><br>
+
+        <label for="categoria">Categoría:</label>
+        <select id="categoria" name="categoria" required>
+          <option value="" disabled selected>Seleccione</option>
+          <option value="Herramientas">Herramientas</option>
+          <option value="Pinturas">Pinturas</option>
+          <option value="Construcción">Construcción</option>
+          <option value="Electrodomésticos">Electrodomésticos</option>
+        </select>
+        <br><br>
+
+        <label for="precio">Precio ($):</label>
+        <select id="precio" name="precio" required>
+          <option value="" disabled selected>Seleccione</option>
+          <option value="1000">$1000</option>
+          <option value="5000">$5000</option>
+          <option value="10000">$10000</option>
+          <option value="20000">$20000</option>
+        </select>
+        <br><br>
+
+        <label for="stock">Stock:</label>
+        <select id="stock" name="stock" required>
+          <option value="" disabled selected>Seleccione</option>
+          <option value="10">10</option>
+          <option value="20">20</option>
+          <option value="50">50</option>
+          <option value="100">100</option>
+        </select>
+        <br><br>
+
+        <label for="proveedor">Proveedor:</label>
+        <input type="text" id="proveedor" name="proveedor" required>
+        <br><br>
+
+        <button type="submit">Agregar Producto</button>
+      </form>
+
+      <!-- Tabla de Productos -->
+      <h2>Productos Registrados</h2>
+      <table border="1" id="tblProductos">
+        <thead>
+          <tr>
+            <th>Código</th>
+            <th>Nombre</th>
+            <th>Categoría</th>
+            <th>Precio ($)</th>
+            <th>Stock</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <!-- Aqui se van a mostrar los productos -->
+        </tbody>
+      </table>
+    </section>
+
+
+  <!--Como agregar y eliminar productos de la tabla-->
+  <script>
+    const form = document.getElementById("productoForm");
+    const tabla = document.getElementById("tblProductos").querySelector("tbody");
+
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      // Obtener valores
+      const codigo = document.getElementById("codigo").value;
+      const nombre = document.getElementById("nombreProducto").value;
+      const categoria = document.getElementById("categoria").value;
+      const precio = document.getElementById("precio").value;
+      const stock = document.getElementById("stock").value;
+
+      // Crear fila
+      const fila = document.createElement("tr");
+      fila.innerHTML = `
+        <td>${codigo}</td>
+        <td>${nombre}</td>
+        <td>${categoria}</td>
+        <td>$${precio}</td>
+        <td>${stock}</td>
+        <td>
+          <button onclick="editarProducto(this)">Editar</button>
+          <button onclick="eliminarProducto(this)">Eliminar</button>
+        </td>
+      `;
+
+      // Agregar fila a la tabla
+      tabla.appendChild(fila);
+
+      // Limpiar formulario
+      form.reset();
+    });
+
+    // Función para eliminar
+    function eliminarProducto(btn) {
+      btn.closest("tr").remove();
+    }
+
+    // Función para editar
+    function editarProducto(btn) {
+      const fila = btn.closest("tr");
+      document.getElementById("codigo").value = fila.cells[0].innerText;
+      document.getElementById("nombreProducto").value = fila.cells[1].innerText;
+      document.getElementById("categoria").value = fila.cells[2].innerText;
+      document.getElementById("precio").value = fila.cells[3].innerText.replace("$","");
+      document.getElementById("stock").value = fila.cells[4].innerText;
+
+      fila.remove();
+    }
+  </script>
+  <!-- Pie de página -->
+  <footer>
+    <p>Desarrollado por <span>Sistemas Inteligentes</span></p>
+    <p>copyright &copy; 2025 versión 1.0 Derechos Reservados</p>
+    <p>FERRETERÍA EL MARTILLO - PROVIDENCIA</p>
+  </footer>
+</body>
+</html>
